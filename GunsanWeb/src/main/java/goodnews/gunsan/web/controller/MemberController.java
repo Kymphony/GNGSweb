@@ -17,11 +17,21 @@ public class MemberController {
 	@RequestMapping(value = "/memberjoin", method = RequestMethod.GET)
 	public String memberjoin(Model model){
 		
-		logger.info("PAGE CONNECTED : memberjoin");
+		logger.info("PAGE CONNECTED : memberjoin[GET]");
 		
 		
 		
 		return "member/memberjoin";
+	}
+	
+	@RequestMapping(value = "/memberjoin", method = RequestMethod.POST)
+	public String memberjoin_post(Model model){
+		
+		logger.info("PAGE CONNECTED : memberjoin[POST]");
+		
+		
+		// 회원정보 확인 페이지로 포워딩
+		return "member/memberjoin_verify";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

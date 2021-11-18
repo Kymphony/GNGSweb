@@ -9,7 +9,7 @@ function login_input_check(){
 	var pw = document.getElementById('login_pw');
 	
 	// 1) valid check
-	if (id.value == '' || id.value = null){
+	if (id.value == '' || id.value == null){
 		
 		alert('아이디를 입력하세요');
 		return false;
