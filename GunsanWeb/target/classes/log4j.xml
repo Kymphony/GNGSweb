@@ -12,7 +12,7 @@
 	
 	<!-- Application Loggers -->
 	<logger name="goodnews.gunsan.web">
-		<level value="info" />
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
