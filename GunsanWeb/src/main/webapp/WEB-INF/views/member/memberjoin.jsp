@@ -80,6 +80,8 @@ function join_input_check(){
 	console.log('phone: ' + phone.value);
 	console.log('sex_value: ' + sex_value);
 	
+	
+	
 	// 1) null check
 	if (name.value == '' || name.value == null){
 		alert('이름을 입력하세요');
