@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="goodnews.gunsan.web.dao.MemberMapper">
+
+	<!-- regist member -->
+	<insert id="insert" parameterType="Member">
+		insert into MEMBER (name, id, pw, birth, gender, phone_number) 
+		values (#{name}, #{id}, #{pw}, #{birth}, #{gender}, #{phone_number}) 
+	</insert>
+	
+	<!-- id existence check -->
+	<select id="idCheck" parameterType="string" resultType="Member">
+		select * from MEMBER where id = #{id}
+	</select>
+	
+	<!-- phone number existence check -->
+	<select id="pbCheck" parameterType="string" resultType="Member">
+		select * from MEMBER where phone_number = #{pb}
+	</select>
+	
+
+	<!-- 회원 정보 출력-->
+	<select id="select" resultType="Member">
+		select * from web4_member
+	</select>
+	
+	<!-- 1명의 회원정보 회원 검색(로그인) -->
+	<select id="selectOne" parameterType="string" resultType="Member">
+		select * from web4_member where id = #{id}
+	</select>
+	
+	<!-- 회원정보 삭제 -->
+	<delete id="delete" parameterType="string">
+		delete from web4_member where id = #{id}
+	</delete>
+	
+</mapper>
+
